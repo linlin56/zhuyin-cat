@@ -1,0 +1,28 @@
+/* The map: units and their lessons. */
+
+/* The unit's number (一, 二...) in an orange square. */
+.zc-unit-badge {
+  width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: var(--bs-border-radius-lg);
+  display: grid; place-items: center; font-size: 1.4rem; font-weight: 700;
+  background: var(--bs-primary); color: #fff;
+}
+
+/* A lesson's button; done: has stars, current: the next one to play. */
+.zc-node {
+  width: 6.5rem; min-height: 6rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .1rem;
+  background: var(--bs-tertiary-bg); border: 1px solid var(--bs-border-color); color: var(--bs-body-color);
+}
+.zc-node:hover { border-color: var(--bs-primary-border-subtle); color: var(--bs-body-color); background: var(--bs-tertiary-bg); }
+.zc-node.done { background: var(--bs-primary-bg-subtle); border-color: var(--bs-primary-border-subtle); }
+.zc-node.current { border: 2px solid var(--bs-primary); }
+.zc-node:disabled { opacity: .45; border-color: var(--bs-border-color); background: var(--bs-tertiary-bg); }
+
+/* The lesson's keys or sign, at the top of its button. */
+.zc-node-title { font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
+
+/* The lesson's kind, under its title. */
+.zc-node-type { font-size: .75rem; color: var(--bs-secondary-color); line-height: 1.1; text-align: center; }
+
+/* The three stars of a lesson, the earned ones in orange. */
+.zc-stars { font-size: .8rem; color: var(--bs-secondary-bg); letter-spacing: .05rem; }
+.zc-stars .on { color: var(--bs-primary); }

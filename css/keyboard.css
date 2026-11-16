@@ -1,0 +1,39 @@
+/* The on-screen zhuyin keyboard. */
+
+/* The keyboard and its rows, shifted like a real keyboard. */
+.zc-kb { display: flex; flex-direction: column; gap: .35rem; align-items: center; user-select: none; padding: .75rem .5rem; }
+.zc-kb-row { display: flex; gap: .35rem; }
+.zc-kb-row.r1 { margin-left: 1.6rem; } .zc-kb-row.r2 { margin-left: 2.6rem; } .zc-kb-row.r3 { margin-left: 4.2rem; }
+
+/* A key: its zhuyin (zy) and its letter on the user's layout (lt). */
+.zc-k {
+  width: 3.25rem; height: 3.25rem; padding: 0; position: relative; display: grid; place-items: center;
+  border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius);
+  color: var(--bs-body-color); transition: transform .06s, opacity .2s;
+}
+.zc-k .zy { font-size: 1.4rem; font-weight: 600; }
+.zc-k .lt { position: absolute; top: .15rem; left: .35rem; font-size: .65rem; color: var(--bs-secondary-color); font-weight: 600; }
+
+/* The space bar, which types the 1st tone. */
+.zc-k.space { width: 20rem; height: 2.5rem; }
+.zc-k.space .zy { font-size: .85rem; font-weight: 400; }
+
+/* The colour of the finger that types each key. */
+.zc-k[data-f=lp] { background: var(--zc-f-lp); } .zc-k[data-f=lr] { background: var(--zc-f-lr); }
+.zc-k[data-f=lm] { background: var(--zc-f-lm); } .zc-k[data-f=li] { background: var(--zc-f-li); }
+.zc-k[data-f=ri] { background: var(--zc-f-ri); } .zc-k[data-f=rm] { background: var(--zc-f-rm); }
+.zc-k[data-f=rr] { background: var(--zc-f-rr); } .zc-k[data-f=rp] { background: var(--zc-f-rp); }
+.zc-k[data-f=th] { background: var(--zc-f-th); }
+
+/* A key not used in this lesson. */
+.zc-k.dim { opacity: .3; }
+
+/* The bump on F and J. */
+.zc-k.home::after { content: ''; position: absolute; bottom: .3rem; width: .7rem; height: 2px; border-radius: 2px; background: var(--bs-secondary-color); }
+
+/* The key to type next. */
+.zc-k.next { outline: 3px solid var(--bs-primary); outline-offset: 2px; opacity: 1; }
+
+/* A key just pressed, and a wrong key. */
+.zc-k.press { transform: translateY(2px); }
+.zc-k.wrong { background: var(--bs-danger-bg-subtle) !important; border-color: var(--bs-danger); }

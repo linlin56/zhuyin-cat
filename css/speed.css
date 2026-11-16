@@ -1,0 +1,38 @@
+/* The speed challenge. */
+
+/* The area where the keys fall, and the line they must not reach. */
+.zc-arena { position: relative; height: clamp(16rem, calc(100vh - 27rem), 35rem); overflow: hidden; }
+.zc-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 3.5rem; background: var(--bs-tertiary-bg); border-top: 1px dashed var(--bs-border-color); }
+
+/* A falling key; target is the lowest one, popped is one just typed. */
+.zc-drop {
+  position: absolute; top: 0; width: 3.4rem; height: 3.4rem; margin-left: -1.7rem; border-radius: 50%;
+  background: var(--zc-drop); color: var(--zc-drop-color); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700;
+  will-change: transform;
+}
+.zc-drop.target { box-shadow: 0 0 0 3px var(--bs-primary); }
+.zc-drop.popped { animation: zc-pop .25s ease-out forwards; }
+@keyframes zc-pop { to { transform: var(--t) scale(1.6); opacity: 0; } }
+
+/* A message over the area: start, pause, game over. */
+.zc-arena-msg { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 1.25rem; background: rgba(var(--bs-body-bg-rgb), .85); }
+
+/* The points won, rising from a typed key. */
+.zc-float { position: absolute; font-weight: 700; color: var(--bs-primary-text-emphasis); pointer-events: none; animation: zc-float .7s ease-out forwards; }
+@keyframes zc-float { to { transform: translateY(-2.5rem); opacity: 0; } }
+
+/* The "Level N!" announcement. */
+.zc-level-up {
+  position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none;
+  font-size: 2.2rem; font-weight: 700; color: var(--bs-primary-text-emphasis); animation: zc-level 1.2s ease-out forwards;
+}
+@keyframes zc-level { 0% { opacity: 0; } 20%, 80% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -80%); } }
+
+/* A counter tile (score, level, combo, record). */
+.zc-stat { text-align: center; }
+.zc-stat .h4 { margin: 0; }
+
+/* The three lives, the lost ones greyed out. */
+.zc-lives { display: flex; justify-content: center; gap: .4rem; }
+.zc-life { display: inline-block; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--zc-drop); }
+.zc-life.lost { background: var(--bs-secondary-bg); }

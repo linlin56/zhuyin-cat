@@ -1,0 +1,34 @@
+/* The lesson: the text to type, one cell per key, hanzi above the syllables. */
+
+/* The box of the text: a few lines, scrolled to keep the current one at the top. */
+.zc-text-box { position: relative; height: 13rem; overflow: hidden; }
+.zc-text-inner { display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: .25rem; row-gap: .9rem; transition: transform .2s ease; }
+
+/* A block: one syllable (with its hanzi) or one group of keys; word-end leaves a gap after it. */
+.zc-blk { display: flex; flex-direction: column; align-items: center; }
+.zc-blk.word-end { margin-right: .9rem; }
+
+/* The hanzi above a syllable, hidden for groups of keys. */
+.zc-blk .zc-hz { font-size: 1.1rem; color: var(--bs-secondary-color); height: 1.5rem; line-height: 1.5rem; }
+.zc-blk.no-hz .zc-hz { display: none; }
+
+/* The row of cells of a block. */
+.zc-cells { display: flex; }
+
+/* A key to type: sp is Space, done is typed, had-err was missed first, cur is the next one. */
+.zc-c {
+  font-size: 2rem; line-height: 1; min-width: 2.1rem; height: 2.9rem; display: grid; place-items: center;
+  border-radius: var(--bs-border-radius); color: var(--bs-secondary-color); opacity: .6; position: relative;
+}
+.zc-c.sp { min-width: 1.4rem; font-size: 1rem; }
+.zc-c.done { color: var(--bs-body-color); opacity: 1; }
+.zc-c.done.sp { color: var(--bs-secondary-color); opacity: .6; }
+.zc-c.had-err { color: var(--bs-danger); }
+.zc-c.cur { background: var(--bs-primary-bg-subtle); color: var(--bs-emphasis-color); opacity: 1; }
+.zc-c.cur::after { content: ''; position: absolute; left: .35rem; right: .35rem; bottom: .2rem; height: 3px; border-radius: 3px; background: var(--bs-primary); animation: zc-blink 1s steps(2) infinite; }
+.zc-c.shake { animation: zc-shake .25s; background: var(--bs-danger-bg-subtle); }
+@keyframes zc-blink { 50% { opacity: 0; } }
+@keyframes zc-shake { 0%, 100% { transform: none; } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+
+/* The coloured dot of the finger to use, in the hint under the text. */
+.zc-finger-dot { display: inline-block; width: .75rem; height: .75rem; border-radius: 50%; margin-right: .4rem; vertical-align: middle; border: 1px solid var(--bs-border-color); }

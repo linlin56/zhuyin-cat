@@ -1,0 +1,8 @@
+/* The results of a lesson. */
+
+/* The three big stars; pop makes the earned ones pop in one after the other, only when the lesson has just ended. */
+.zc-big-stars { font-size: 3rem; letter-spacing: .4rem; }
+.zc-big-stars .bi { display: inline-block; color: var(--bs-secondary-bg); }
+.zc-big-stars .on { color: var(--bs-primary); }
+.zc-big-stars .on.pop { animation: zc-star .4s ease-out both; }
+@keyframes zc-star { from { transform: scale(0); } to { transform: none; } }

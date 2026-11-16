@@ -1,0 +1,31 @@
+/* Theme came from my other project, MiningCat (https://github.com/linlin56/mining-cat)
+ * It uses bootstrap
+ */
+
+/* Base rules Bootstrap has no class for (loaded after theme.css). Classes start with zc-.
+   The other files: map.css, lesson.css, keyboard.css, results.css, speed.css, small-screens.css. */
+
+/* The scripts show and hide elements with the hidden attribute: it must win over Bootstrap's display utilities. */
+[hidden] { display: none !important; }
+
+/* Colours of the game: one per finger on the keyboard, and the falling keys of the speed challenge. */
+:root,
+[data-bs-theme="light"] {
+  --zc-f-lp: #ffd6d6; --zc-f-lr: #ffe2c2; --zc-f-lm: #fff1b8; --zc-f-li: #d6efcf;
+  --zc-f-ri: #cdebe8; --zc-f-rm: #d6e2fa; --zc-f-rr: #e5d8f6; --zc-f-rp: #f8d6ea; --zc-f-th: var(--bs-tertiary-bg);
+  --zc-drop: #4a3226;
+  --zc-drop-color: #fff;
+}
+[data-bs-theme="dark"] {
+  --zc-f-lp: #4a2b2b; --zc-f-lr: #4a3624; --zc-f-lm: #48401f; --zc-f-li: #2c4229;
+  --zc-f-ri: #234240; --zc-f-rm: #28344d; --zc-f-rr: #3a2d4a; --zc-f-rp: #4a2a3d; --zc-f-th: var(--bs-tertiary-bg);
+  --zc-drop: #c8a58a;
+  --zc-drop-color: #1d1a18;
+}
+
+/* Zhuyin and hanzi: a Chinese font that draws bopomofo well. */
+.zc-zh { font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
+
+/* A screen of the app: only the active one is shown. */
+.zc-screen { display: none; }
+.zc-screen.active { display: block; }
