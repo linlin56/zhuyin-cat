@@ -1,6 +1,6 @@
 # ZhuyinCat
 
-[Click here to play!](https://linlin56.github.io/zhuyin-cat/)
+[Click here to play!](https://linlin56.github.io/zhuyin-cat/)  
 A typing game to learn the standard zhuyin (bopomofo) keyboard layout.
 
 - Play on your computer or your phone directly in the browser, no installation required!
