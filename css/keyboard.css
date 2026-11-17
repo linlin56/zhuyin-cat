@@ -31,8 +31,9 @@
 /* The bump on F and J. */
 .zc-k.home::after { content: ''; position: absolute; bottom: .3rem; width: .7rem; height: 2px; border-radius: 2px; background: var(--bs-secondary-color); }
 
-/* The key to type next. */
-.zc-k.next { outline: 3px solid var(--bs-primary); outline-offset: 2px; opacity: 1; }
+/* The key to type next. The ring is drawn inside the key: an outline outside it is covered by the
+   neighbouring keys when they are close (phones) and is not always repainted by Safari on iOS. */
+.zc-k.next { border-color: var(--bs-primary); box-shadow: inset 0 0 0 3px var(--bs-primary); opacity: 1; }
 
 /* A key just pressed, and a wrong key. */
 .zc-k.press { transform: translateY(2px); }

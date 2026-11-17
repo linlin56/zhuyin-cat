@@ -1,7 +1,9 @@
 /* The lesson: the text to type, one cell per key, hanzi above the syllables. */
 
 /* The box of the text: a few lines, scrolled to keep the current one at the top. */
-.zc-text-box { position: relative; height: 13rem; overflow: hidden; }
+.zc-text-box { position: relative; height: 13rem; overflow: hidden; padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x); }
+/* The padding is on the card so the body can clip the lines scrolled above it (sides left free for the shake). */
+.zc-text-box > .card-body { padding: 0; clip-path: inset(0 -1rem); }
 .zc-text-inner { display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: .25rem; row-gap: .9rem; transition: transform .2s ease; }
 
 /* A block: one syllable (with its hanzi) or one group of keys; word-end leaves a gap after it. */
