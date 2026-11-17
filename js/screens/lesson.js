@@ -24,7 +24,9 @@
       if (i < run.pos && run.errAt.has(i)) c.classList.add('had-err');
     });
     run.keys = ZC.Keyboard.render($('.zc-kb-card', el), zy => input(zy, null));
-    ZC.Keyboard.dimExcept(run.keys, new Set(def.pool.concat(def.type === 'intro' || def.type === 'drill' ? [' '] : Layout.ALL_ZY.concat(' '))));
+    // Light only the learned keys (plus Space); syllable lessons also light the tones.
+    const extra = { intro: [], drill: [], syll: Layout.TONES }[def.type] || Layout.ALL_ZY;
+    ZC.Keyboard.dimExcept(run.keys, new Set(def.pool.concat(extra, ' ')));
     $('[data-act=quit]', el).onclick = () => ZC.go('home');
     $('[data-act=restart]', el).onclick = () => ZC.go('lesson', def.id);
     $('[data-act=help]', el).onclick = () => showHelp(def);
