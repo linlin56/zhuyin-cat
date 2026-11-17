@@ -29,6 +29,7 @@ I18N.fr = {
   learnNeutral: "Ton neutre : ˙ se tape à la fin de la syllabe (ㄇㄚ˙). À l’écrit, on le place avant (˙ㄇㄚ).",
   learnSentences: "Des phrases complètes, comme avec un vrai clavier zhuyin : on enchaîne les syllabes sans s’arrêter.",
   learnSyll: "Une syllabe s’écrit avec un à trois symboles zhuyin, suivis du ton : Espace pour le 1er ton, sinon ˊ ˇ ˋ ˙. Le caractère au-dessus indique le sens.",
+  learnSyllSpace: "Une syllabe s’écrit avec un à trois symboles zhuyin. Ici, toutes sont au 1er ton : on finit chaque syllabe par Espace. Le caractère au-dessus indique le sens.",
   learnTitle: "Ce que tu vas apprendre",
   learnTones: "Les tons se tapent APRÈS la syllabe : ˊ = 2e ton, ˇ = 3e ton, ˋ = 4e ton, ˙ = ton neutre. Le 1er ton, c’est Espace.",
   learnTouch: "Sur téléphone, le jeu utilise son propre clavier zhuyin (disposition standard 大千) : tu apprends où sont les touches, ça te servira aussi sur ordinateur.",

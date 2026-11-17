@@ -29,6 +29,7 @@ I18N.en = {
   learnNeutral: "Neutral tone: ˙ is typed at the end of the syllable (ㄇㄚ˙). In writing, it goes first (˙ㄇㄚ).",
   learnSentences: "Full sentences, just like on a real zhuyin keyboard: chain the syllables without stopping.",
   learnSyll: "A syllable is written with one to three zhuyin symbols, followed by its tone: Space for the 1st tone, otherwise ˊ ˇ ˋ ˙. The character above shows the meaning.",
+  learnSyllSpace: "A syllable is written with one to three zhuyin symbols. Here they are all 1st tone: end each syllable with Space. The character above shows the meaning.",
   learnTitle: "What you will learn",
   learnTones: "Tones are typed AFTER the syllable: ˊ = 2nd tone, ˇ = 3rd tone, ˋ = 4th tone, ˙ = neutral tone. The 1st tone is Space.",
   learnTouch: "On a phone, the game uses its own zhuyin keyboard (standard 大千 layout): you learn where the keys are, which will help on a computer too.",

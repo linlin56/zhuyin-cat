@@ -24,8 +24,8 @@
       if (i < run.pos && run.errAt.has(i)) c.classList.add('had-err');
     });
     run.keys = ZC.Keyboard.render($('.zc-kb-card', el), zy => input(zy, null));
-    // Light only the learned keys (plus Space); syllable lessons also light the tones.
-    const extra = { intro: [], drill: [], syll: Layout.TONES }[def.type] || Layout.ALL_ZY;
+    // Light only the learned keys and Space; tones light up once their lesson is done.
+    const extra = ['intro', 'drill', 'syll'].includes(def.type) ? [] : Layout.ALL_ZY;
     ZC.Keyboard.dimExcept(run.keys, new Set(def.pool.concat(extra, ' ')));
     $('[data-act=quit]', el).onclick = () => ZC.go('home');
     $('[data-act=restart]', el).onclick = () => ZC.go('lesson', def.id);
@@ -88,7 +88,7 @@
       if (def.keys.some(k => Layout.TONES.includes(k))) learn.push(t('learnTones'));
       if (def.keys.includes('˙')) learn.push(t('learnNeutral'));
     } else if (def.type === 'drill') learn.push(t('learnDrill'));
-    else if (def.type === 'syll') learn.push(t('learnSyll'));
+    else if (def.type === 'syll') learn.push(t(def.pool.some(k => Layout.TONES.includes(k)) ? 'learnSyll' : 'learnSyllSpace'));
     else if (def.type === 'words') learn.push(t('learnWords'));
     else learn.push(t('learnSentences'));
     if (def.type !== 'intro' && def.items && def.items.some(i => i.includes('˙'))) learn.push(t('learnNeutral'));
